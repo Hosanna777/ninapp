@@ -1,0 +1,3 @@
+import CartView from '../views/CartView';
+
+export default CartView;
