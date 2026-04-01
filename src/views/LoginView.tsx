@@ -1,4 +1,7 @@
 import type { FormEvent } from 'react';
+import AuthFormActions from '../components/AuthFormActions';
+import AuthLayout from '../components/AuthLayout';
+import DemoUserList from '../components/DemoUserList';
 import FormField from '../components/FormField';
 import type { DemoUser } from '../types/auth';
 
@@ -30,8 +33,8 @@ function LoginView({
   onUseDemoUser,
 }: LoginViewProps) {
   return (
-    <section className="auth-section">
-      <div className="auth-shell">
+    <AuthLayout
+      aside={
         <div className="auth-copy">
           <span className="eyebrow">Login</span>
           <h2>ログイン</h2>
@@ -39,28 +42,15 @@ function LoginView({
             このリポジトリではバックエンドは持たず、`GET /mock/test-users.json`
             で取得したテストユーザを使って画面確認できます。
           </p>
-          <div className="auth-demo-users">
-            <h3>テストユーザ</h3>
-            {isAuthLoading ? (
-              <p>読み込み中...</p>
-            ) : authError ? (
-              <p>{authError}</p>
-            ) : (
-              demoUsers.map((user) => (
-                <button
-                  key={user.id}
-                  className="demo-user-card"
-                  type="button"
-                  onClick={() => onUseDemoUser(user)}
-                >
-                  <strong>{user.name}</strong>
-                  <span>{user.email}</span>
-                  <em>password: {user.password}</em>
-                </button>
-              ))
-            )}
-          </div>
+          <DemoUserList
+            authError={authError}
+            demoUsers={demoUsers}
+            isAuthLoading={isAuthLoading}
+            onUseDemoUser={onUseDemoUser}
+          />
         </div>
+      }
+      form={
         <form className="auth-form-shell" onSubmit={onLoginSubmit}>
           <FormField
             label="メールアドレス"
@@ -77,15 +67,14 @@ function LoginView({
             placeholder="demo1234"
           />
           {loginMessage ? <p className="auth-message">{loginMessage}</p> : null}
-          <button className="primary-button auth-submit" type="submit">
-            ログイン
-          </button>
-          <button className="ghost-button auth-submit" type="button" onClick={onGoToRegister}>
-            新規登録画面へ
-          </button>
+          <AuthFormActions
+            primaryLabel="ログイン"
+            secondaryLabel="新規登録画面へ"
+            onSecondaryClick={onGoToRegister}
+          />
         </form>
-      </div>
-    </section>
+      }
+    />
   );
 }
 

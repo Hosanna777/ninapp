@@ -1,6 +1,8 @@
 import type { FormEvent } from 'react';
-import FormField from '../components/FormField';
+import PaymentSettingsCard from '../components/PaymentSettingsCard';
+import SecuritySettingsCard from '../components/SecuritySettingsCard';
 import SectionHeading from '../components/SectionHeading';
+import ShippingSettingsCard from '../components/ShippingSettingsCard';
 
 type SettingsViewProps = {
   cardHolderName: string;
@@ -45,75 +47,26 @@ function SettingsView({
     <section className="settings-section">
       <SectionHeading label="Account Settings" title="ユーザ設定" />
       <form className="settings-shell" onSubmit={onSave}>
-        <section className="settings-card">
-          <div className="settings-card-head">
-            <span className="eyebrow">Payment</span>
-            <h3>支払い方法</h3>
-          </div>
-          <FormField
-            label="登録カード"
-            type="text"
-            value={paymentMethod}
-            onChange={(event) => onPaymentMethodChange(event.target.value)}
-            placeholder="Visa ending in 4242"
-          />
-          <FormField
-            label="カード名義"
-            type="text"
-            value={cardHolderName}
-            onChange={(event) => onCardHolderNameChange(event.target.value)}
-            placeholder="Ryo Demo"
-          />
-        </section>
-
-        <section className="settings-card">
-          <div className="settings-card-head">
-            <span className="eyebrow">Shipping</span>
-            <h3>配送先情報</h3>
-          </div>
-          <FormField
-            label="氏名"
-            type="text"
-            value={shippingName}
-            onChange={(event) => onShippingNameChange(event.target.value)}
-            placeholder="Ryo Demo"
-          />
-          <FormField
-            label="郵便番号"
-            type="text"
-            value={shippingPostalCode}
-            onChange={(event) => onShippingPostalCodeChange(event.target.value)}
-            placeholder="150-0001"
-          />
-          <FormField
-            label="住所"
-            type="text"
-            value={shippingAddress}
-            onChange={(event) => onShippingAddressChange(event.target.value)}
-            placeholder="東京都..."
-          />
-        </section>
-
-        <section className="settings-card">
-          <div className="settings-card-head">
-            <span className="eyebrow">Security</span>
-            <h3>認証情報</h3>
-          </div>
-          <FormField
-            label="メールアドレス"
-            type="email"
-            value={securityEmail}
-            onChange={(event) => onSecurityEmailChange(event.target.value)}
-            placeholder="ryo@example.com"
-          />
-          <FormField
-            label="新しいパスワード"
-            type="password"
-            value={securityPassword}
-            onChange={(event) => onSecurityPasswordChange(event.target.value)}
-            placeholder="8文字以上"
-          />
-        </section>
+        <PaymentSettingsCard
+          cardHolderName={cardHolderName}
+          paymentMethod={paymentMethod}
+          onCardHolderNameChange={onCardHolderNameChange}
+          onPaymentMethodChange={onPaymentMethodChange}
+        />
+        <ShippingSettingsCard
+          shippingAddress={shippingAddress}
+          shippingName={shippingName}
+          shippingPostalCode={shippingPostalCode}
+          onShippingAddressChange={onShippingAddressChange}
+          onShippingNameChange={onShippingNameChange}
+          onShippingPostalCodeChange={onShippingPostalCodeChange}
+        />
+        <SecuritySettingsCard
+          securityEmail={securityEmail}
+          securityPassword={securityPassword}
+          onSecurityEmailChange={onSecurityEmailChange}
+          onSecurityPasswordChange={onSecurityPasswordChange}
+        />
 
         <div className="settings-footer">
           {settingsMessage ? <p className="auth-message">{settingsMessage}</p> : null}

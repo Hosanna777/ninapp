@@ -1,3 +1,5 @@
+import CartItemRow from '../components/CartItemRow';
+import CartSummaryPanel from '../components/CartSummaryPanel';
 import SectionHeading from '../components/SectionHeading';
 import type { CartItem } from '../types/cart';
 
@@ -27,52 +29,13 @@ function CartView({
         <div className="cart-list">
           {cartItems.length > 0 ? (
             cartItems.map((item) => (
-              <article className="cart-item" key={item.product.id}>
-                <button
-                  className="cart-item-media"
-                  type="button"
-                  onClick={() => onOpenProduct(item.product)}
-                  aria-label={`${item.product.name} の詳細を見る`}
-                >
-                  <img
-                    src={item.product.image}
-                    alt={item.product.name}
-                    className="cart-item-image"
-                  />
-                </button>
-                <div className="cart-item-copy">
-                  <span className="eyebrow">{item.product.badge}</span>
-                  <h3>{item.product.name}</h3>
-                  <p>{item.product.description}</p>
-                  <strong>{item.product.price}</strong>
-                </div>
-                <div className="cart-item-controls">
-                  <div className="quantity-control">
-                    <button
-                      type="button"
-                      onClick={() => onUpdateCartQuantity(item.product.id, -1)}
-                      aria-label={`${item.product.name} の数量を減らす`}
-                    >
-                      -
-                    </button>
-                    <span>{item.quantity}</span>
-                    <button
-                      type="button"
-                      onClick={() => onUpdateCartQuantity(item.product.id, 1)}
-                      aria-label={`${item.product.name} の数量を増やす`}
-                    >
-                      +
-                    </button>
-                  </div>
-                  <button
-                    className="cart-remove-button"
-                    type="button"
-                    onClick={() => onRemoveFromCart(item.product.id)}
-                  >
-                    削除
-                  </button>
-                </div>
-              </article>
+              <CartItemRow
+                key={item.product.id}
+                item={item}
+                onOpenProduct={onOpenProduct}
+                onRemoveFromCart={onRemoveFromCart}
+                onUpdateCartQuantity={onUpdateCartQuantity}
+              />
             ))
           ) : (
             <div className="cart-empty-state">
@@ -84,29 +47,11 @@ function CartView({
             </div>
           )}
         </div>
-        <aside className="cart-summary">
-          <span className="eyebrow">Summary</span>
-          <h3>注文概要</h3>
-          <div className="cart-summary-row">
-            <span>商品数</span>
-            <strong>{totalCartItems}</strong>
-          </div>
-          <div className="cart-summary-row">
-            <span>小計</span>
-            <strong>{subtotalText}</strong>
-          </div>
-          <div className="cart-summary-row">
-            <span>配送</span>
-            <strong>{cartItems.length > 0 ? '無料' : '-'}</strong>
-          </div>
-          <button
-            className="primary-button cart-checkout-button"
-            type="button"
-            disabled={cartItems.length === 0}
-          >
-            購入手続きへ
-          </button>
-        </aside>
+        <CartSummaryPanel
+          hasItems={cartItems.length > 0}
+          subtotalText={subtotalText}
+          totalCartItems={totalCartItems}
+        />
       </div>
     </section>
   );

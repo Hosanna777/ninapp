@@ -1,4 +1,6 @@
 import type { FormEvent } from 'react';
+import AuthFormActions from '../components/AuthFormActions';
+import AuthLayout from '../components/AuthLayout';
 import FormField from '../components/FormField';
 
 type RegisterViewProps = {
@@ -25,8 +27,8 @@ function RegisterView({
   onRegisterSubmit,
 }: RegisterViewProps) {
   return (
-    <section className="auth-section">
-      <div className="auth-shell">
+    <AuthLayout
+      aside={
         <div className="auth-copy">
           <span className="eyebrow">Register</span>
           <h2>ユーザ登録</h2>
@@ -35,6 +37,8 @@ function RegisterView({
             API 呼び出しまでに留めています。
           </p>
         </div>
+      }
+      form={
         <form className="auth-form-shell" onSubmit={onRegisterSubmit}>
           <FormField
             label="表示名"
@@ -58,15 +62,14 @@ function RegisterView({
             placeholder="8文字以上"
           />
           {registerMessage ? <p className="auth-message">{registerMessage}</p> : null}
-          <button className="primary-button auth-submit" type="submit">
-            登録する
-          </button>
-          <button className="ghost-button auth-submit" type="button" onClick={onGoToLogin}>
-            ログイン画面へ
-          </button>
+          <AuthFormActions
+            primaryLabel="登録する"
+            secondaryLabel="ログイン画面へ"
+            onSecondaryClick={onGoToLogin}
+          />
         </form>
-      </div>
-    </section>
+      }
+    />
   );
 }
 
