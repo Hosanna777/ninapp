@@ -3,14 +3,18 @@ import SettingsCard from './SettingsCard';
 
 type PaymentSettingsCardProps = {
   cardHolderName: string;
+  cardHolderNameError?: string;
   paymentMethod: string;
+  paymentMethodError?: string;
   onCardHolderNameChange: (value: string) => void;
   onPaymentMethodChange: (value: string) => void;
 };
 
 function PaymentSettingsCard({
   cardHolderName,
+  cardHolderNameError,
   paymentMethod,
+  paymentMethodError,
   onCardHolderNameChange,
   onPaymentMethodChange,
 }: PaymentSettingsCardProps) {
@@ -20,6 +24,8 @@ function PaymentSettingsCard({
         label="登録カード"
         type="text"
         value={paymentMethod}
+        error={paymentMethodError}
+        required
         onChange={(event) => onPaymentMethodChange(event.target.value)}
         placeholder="Visa ending in 4242"
       />
@@ -27,6 +33,8 @@ function PaymentSettingsCard({
         label="カード名義"
         type="text"
         value={cardHolderName}
+        error={cardHolderNameError}
+        required
         onChange={(event) => onCardHolderNameChange(event.target.value)}
         placeholder="Ryo Demo"
       />

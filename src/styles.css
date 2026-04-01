@@ -714,6 +714,12 @@ button {
   margin: 0;
 }
 
+.auth-field span {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
 .auth-copy h2,
 .auth-demo-users h3 {
   font-family: 'Space Grotesk', sans-serif;
@@ -775,6 +781,22 @@ button {
   border-radius: 16px;
   background: rgba(255, 255, 255, 0.72);
   font: inherit;
+}
+
+.auth-field input[aria-invalid='true'] {
+  border-color: #c84b31;
+  background: rgba(255, 237, 232, 0.9);
+}
+
+.field-error {
+  color: #b53d24;
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+.required-mark {
+  color: #c84b31;
+  font-weight: 700;
 }
 
 .auth-submit {

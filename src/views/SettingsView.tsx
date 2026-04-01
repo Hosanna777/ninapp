@@ -3,12 +3,14 @@ import PaymentSettingsCard from '../components/PaymentSettingsCard';
 import SecuritySettingsCard from '../components/SecuritySettingsCard';
 import SectionHeading from '../components/SectionHeading';
 import ShippingSettingsCard from '../components/ShippingSettingsCard';
+import type { SettingsFormErrors } from '../features/settings/model/settingsValidation';
 
 type SettingsViewProps = {
   cardHolderName: string;
   paymentMethod: string;
   securityEmail: string;
   securityPassword: string;
+  settingsErrors: SettingsFormErrors;
   settingsMessage: string;
   shippingBuilding: string;
   shippingCity: string;
@@ -47,6 +49,7 @@ function SettingsView({
   paymentMethod,
   securityEmail,
   securityPassword,
+  settingsErrors,
   settingsMessage,
   shippingBuilding,
   shippingCity,
@@ -82,26 +85,38 @@ function SettingsView({
   return (
     <section className="settings-section">
       <SectionHeading label="Account Settings" title="ユーザ設定" />
-      <form className="settings-shell" onSubmit={onSave}>
+      <form className="settings-shell" noValidate onSubmit={onSave}>
         <PaymentSettingsCard
           cardHolderName={cardHolderName}
+          cardHolderNameError={settingsErrors.cardHolderName}
           paymentMethod={paymentMethod}
+          paymentMethodError={settingsErrors.paymentMethod}
           onCardHolderNameChange={onCardHolderNameChange}
           onPaymentMethodChange={onPaymentMethodChange}
         />
         <ShippingSettingsCard
           shippingBuilding={shippingBuilding}
           shippingCity={shippingCity}
+          shippingCityError={settingsErrors.shippingCity}
           shippingFirstName={shippingFirstName}
+          shippingFirstNameError={settingsErrors.shippingFirstName}
           shippingFirstNameKana={shippingFirstNameKana}
+          shippingFirstNameKanaError={settingsErrors.shippingFirstNameKana}
           shippingLastName={shippingLastName}
+          shippingLastNameError={settingsErrors.shippingLastName}
           shippingLastNameKana={shippingLastNameKana}
+          shippingLastNameKanaError={settingsErrors.shippingLastNameKana}
           shippingMiddleName={shippingMiddleName}
           shippingMiddleNameKana={shippingMiddleNameKana}
+          shippingMiddleNameKanaError={settingsErrors.shippingMiddleNameKana}
           shippingPostalCode={shippingPostalCode}
+          shippingPostalCodeError={settingsErrors.shippingPostalCode}
           shippingPrefecture={shippingPrefecture}
+          shippingPrefectureError={settingsErrors.shippingPrefecture}
           shippingStreetAddress={shippingStreetAddress}
+          shippingStreetAddressError={settingsErrors.shippingStreetAddress}
           shippingPhoneNumber={shippingPhoneNumber}
+          shippingPhoneNumberError={settingsErrors.shippingPhoneNumber}
           onShippingBuildingChange={onShippingBuildingChange}
           onShippingCityChange={onShippingCityChange}
           onShippingFirstNameChange={onShippingFirstNameChange}
@@ -117,7 +132,9 @@ function SettingsView({
         />
         <SecuritySettingsCard
           securityEmail={securityEmail}
+          securityEmailError={settingsErrors.securityEmail}
           securityPassword={securityPassword}
+          securityPasswordError={settingsErrors.securityPassword}
           onSecurityEmailChange={onSecurityEmailChange}
           onSecurityPasswordChange={onSecurityPasswordChange}
         />

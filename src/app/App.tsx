@@ -57,6 +57,7 @@ function App() {
     paymentMethod,
     securityEmail,
     securityPassword,
+    settingsErrors,
     settingsMessage,
     shippingBuilding,
     shippingCity,
@@ -216,6 +217,7 @@ function App() {
         paymentMethod={paymentMethod}
         securityEmail={securityEmail}
         securityPassword={securityPassword}
+        settingsErrors={settingsErrors}
         settingsMessage={settingsMessage}
         shippingBuilding={shippingBuilding}
         shippingCity={shippingCity}
