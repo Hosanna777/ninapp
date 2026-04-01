@@ -60,7 +60,12 @@ function App() {
     settingsMessage,
     shippingBuilding,
     shippingCity,
-    shippingName,
+    shippingFirstName,
+    shippingFirstNameKana,
+    shippingLastName,
+    shippingLastNameKana,
+    shippingMiddleName,
+    shippingMiddleNameKana,
     shippingPostalCode,
     shippingPrefecture,
     shippingStreetAddress,
@@ -72,7 +77,12 @@ function App() {
     setSecurityPassword,
     setShippingBuilding,
     setShippingCity,
-    setShippingName,
+    setShippingFirstName,
+    setShippingFirstNameKana,
+    setShippingLastName,
+    setShippingLastNameKana,
+    setShippingMiddleName,
+    setShippingMiddleNameKana,
     setShippingPostalCode,
     setShippingPrefecture,
     setShippingStreetAddress,
@@ -209,7 +219,12 @@ function App() {
         settingsMessage={settingsMessage}
         shippingBuilding={shippingBuilding}
         shippingCity={shippingCity}
-        shippingName={shippingName}
+        shippingFirstName={shippingFirstName}
+        shippingFirstNameKana={shippingFirstNameKana}
+        shippingLastName={shippingLastName}
+        shippingLastNameKana={shippingLastNameKana}
+        shippingMiddleName={shippingMiddleName}
+        shippingMiddleNameKana={shippingMiddleNameKana}
         shippingPostalCode={shippingPostalCode}
         shippingPrefecture={shippingPrefecture}
         shippingStreetAddress={shippingStreetAddress}
@@ -222,7 +237,12 @@ function App() {
         onSecurityPasswordChange={setSecurityPassword}
         onShippingBuildingChange={setShippingBuilding}
         onShippingCityChange={setShippingCity}
-        onShippingNameChange={setShippingName}
+        onShippingFirstNameChange={setShippingFirstName}
+        onShippingFirstNameKanaChange={setShippingFirstNameKana}
+        onShippingLastNameChange={setShippingLastName}
+        onShippingLastNameKanaChange={setShippingLastNameKana}
+        onShippingMiddleNameChange={setShippingMiddleName}
+        onShippingMiddleNameKanaChange={setShippingMiddleNameKana}
         onShippingPostalCodeChange={setShippingPostalCode}
         onShippingPrefectureChange={setShippingPrefecture}
         onShippingStreetAddressChange={setShippingStreetAddress}

@@ -12,7 +12,12 @@ type SettingsViewProps = {
   settingsMessage: string;
   shippingBuilding: string;
   shippingCity: string;
-  shippingName: string;
+  shippingFirstName: string;
+  shippingFirstNameKana: string;
+  shippingLastName: string;
+  shippingLastNameKana: string;
+  shippingMiddleName: string;
+  shippingMiddleNameKana: string;
   shippingPostalCode: string;
   shippingPrefecture: string;
   shippingStreetAddress: string;
@@ -25,7 +30,12 @@ type SettingsViewProps = {
   onSecurityPasswordChange: (value: string) => void;
   onShippingBuildingChange: (value: string) => void;
   onShippingCityChange: (value: string) => void;
-  onShippingNameChange: (value: string) => void;
+  onShippingFirstNameChange: (value: string) => void;
+  onShippingFirstNameKanaChange: (value: string) => void;
+  onShippingLastNameChange: (value: string) => void;
+  onShippingLastNameKanaChange: (value: string) => void;
+  onShippingMiddleNameChange: (value: string) => void;
+  onShippingMiddleNameKanaChange: (value: string) => void;
   onShippingPostalCodeChange: (value: string) => void;
   onShippingPrefectureChange: (value: string) => void;
   onShippingStreetAddressChange: (value: string) => void;
@@ -40,7 +50,12 @@ function SettingsView({
   settingsMessage,
   shippingBuilding,
   shippingCity,
-  shippingName,
+  shippingFirstName,
+  shippingFirstNameKana,
+  shippingLastName,
+  shippingLastNameKana,
+  shippingMiddleName,
+  shippingMiddleNameKana,
   shippingPostalCode,
   shippingPrefecture,
   shippingStreetAddress,
@@ -53,7 +68,12 @@ function SettingsView({
   onSecurityPasswordChange,
   onShippingBuildingChange,
   onShippingCityChange,
-  onShippingNameChange,
+  onShippingFirstNameChange,
+  onShippingFirstNameKanaChange,
+  onShippingLastNameChange,
+  onShippingLastNameKanaChange,
+  onShippingMiddleNameChange,
+  onShippingMiddleNameKanaChange,
   onShippingPostalCodeChange,
   onShippingPrefectureChange,
   onShippingStreetAddressChange,
@@ -72,14 +92,24 @@ function SettingsView({
         <ShippingSettingsCard
           shippingBuilding={shippingBuilding}
           shippingCity={shippingCity}
-          shippingName={shippingName}
+          shippingFirstName={shippingFirstName}
+          shippingFirstNameKana={shippingFirstNameKana}
+          shippingLastName={shippingLastName}
+          shippingLastNameKana={shippingLastNameKana}
+          shippingMiddleName={shippingMiddleName}
+          shippingMiddleNameKana={shippingMiddleNameKana}
           shippingPostalCode={shippingPostalCode}
           shippingPrefecture={shippingPrefecture}
           shippingStreetAddress={shippingStreetAddress}
           shippingPhoneNumber={shippingPhoneNumber}
           onShippingBuildingChange={onShippingBuildingChange}
           onShippingCityChange={onShippingCityChange}
-          onShippingNameChange={onShippingNameChange}
+          onShippingFirstNameChange={onShippingFirstNameChange}
+          onShippingFirstNameKanaChange={onShippingFirstNameKanaChange}
+          onShippingLastNameChange={onShippingLastNameChange}
+          onShippingLastNameKanaChange={onShippingLastNameKanaChange}
+          onShippingMiddleNameChange={onShippingMiddleNameChange}
+          onShippingMiddleNameKanaChange={onShippingMiddleNameKanaChange}
           onShippingPostalCodeChange={onShippingPostalCodeChange}
           onShippingPrefectureChange={onShippingPrefectureChange}
           onShippingStreetAddressChange={onShippingStreetAddressChange}

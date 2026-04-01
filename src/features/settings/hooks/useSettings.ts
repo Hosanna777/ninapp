@@ -4,7 +4,12 @@ import { useState } from 'react';
 function useSettings() {
   const [paymentMethod, setPaymentMethod] = useState('Visa ending in 4242');
   const [cardHolderName, setCardHolderName] = useState('Ryo Demo');
-  const [shippingName, setShippingName] = useState('Ryo Demo');
+  const [shippingLastName, setShippingLastName] = useState('山田');
+  const [shippingFirstName, setShippingFirstName] = useState('太郎');
+  const [shippingMiddleName, setShippingMiddleName] = useState('');
+  const [shippingLastNameKana, setShippingLastNameKana] = useState('ヤマダ');
+  const [shippingFirstNameKana, setShippingFirstNameKana] = useState('タロウ');
+  const [shippingMiddleNameKana, setShippingMiddleNameKana] = useState('');
   const [shippingPostalCode, setShippingPostalCode] = useState('150-0001');
   const [shippingPrefecture, setShippingPrefecture] = useState('東京都');
   const [shippingCity, setShippingCity] = useState('渋谷区神宮前');
@@ -23,7 +28,12 @@ function useSettings() {
     settingsMessage,
     shippingBuilding,
     shippingCity,
-    shippingName,
+    shippingFirstName,
+    shippingFirstNameKana,
+    shippingLastName,
+    shippingLastNameKana,
+    shippingMiddleName,
+    shippingMiddleNameKana,
     shippingPostalCode,
     shippingPrefecture,
     shippingStreetAddress,
@@ -40,7 +50,12 @@ function useSettings() {
     setSecurityPassword,
     setShippingBuilding,
     setShippingCity,
-    setShippingName,
+    setShippingFirstName,
+    setShippingFirstNameKana,
+    setShippingLastName,
+    setShippingLastNameKana,
+    setShippingMiddleName,
+    setShippingMiddleNameKana,
     setShippingPostalCode,
     setShippingPrefecture,
     setShippingStreetAddress,

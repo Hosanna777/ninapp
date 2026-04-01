@@ -4,14 +4,24 @@ import SettingsCard from './SettingsCard';
 type ShippingSettingsCardProps = {
   shippingBuilding: string;
   shippingCity: string;
-  shippingName: string;
+  shippingFirstName: string;
+  shippingFirstNameKana: string;
+  shippingLastName: string;
+  shippingLastNameKana: string;
+  shippingMiddleName: string;
+  shippingMiddleNameKana: string;
   shippingPostalCode: string;
   shippingPrefecture: string;
   shippingStreetAddress: string;
   shippingPhoneNumber: string;
   onShippingBuildingChange: (value: string) => void;
   onShippingCityChange: (value: string) => void;
-  onShippingNameChange: (value: string) => void;
+  onShippingFirstNameChange: (value: string) => void;
+  onShippingFirstNameKanaChange: (value: string) => void;
+  onShippingLastNameChange: (value: string) => void;
+  onShippingLastNameKanaChange: (value: string) => void;
+  onShippingMiddleNameChange: (value: string) => void;
+  onShippingMiddleNameKanaChange: (value: string) => void;
   onShippingPostalCodeChange: (value: string) => void;
   onShippingPrefectureChange: (value: string) => void;
   onShippingStreetAddressChange: (value: string) => void;
@@ -21,14 +31,24 @@ type ShippingSettingsCardProps = {
 function ShippingSettingsCard({
   shippingBuilding,
   shippingCity,
-  shippingName,
+  shippingFirstName,
+  shippingFirstNameKana,
+  shippingLastName,
+  shippingLastNameKana,
+  shippingMiddleName,
+  shippingMiddleNameKana,
   shippingPostalCode,
   shippingPrefecture,
   shippingStreetAddress,
   shippingPhoneNumber,
   onShippingBuildingChange,
   onShippingCityChange,
-  onShippingNameChange,
+  onShippingFirstNameChange,
+  onShippingFirstNameKanaChange,
+  onShippingLastNameChange,
+  onShippingLastNameKanaChange,
+  onShippingMiddleNameChange,
+  onShippingMiddleNameKanaChange,
   onShippingPostalCodeChange,
   onShippingPrefectureChange,
   onShippingStreetAddressChange,
@@ -37,11 +57,46 @@ function ShippingSettingsCard({
   return (
     <SettingsCard label="Shipping" title="配送先情報">
       <FormField
-        label="氏名"
+        label="姓"
         type="text"
-        value={shippingName}
-        onChange={(event) => onShippingNameChange(event.target.value)}
-        placeholder="Ryo Demo"
+        value={shippingLastName}
+        onChange={(event) => onShippingLastNameChange(event.target.value)}
+        placeholder="山田"
+      />
+      <FormField
+        label="名"
+        type="text"
+        value={shippingFirstName}
+        onChange={(event) => onShippingFirstNameChange(event.target.value)}
+        placeholder="太郎"
+      />
+      <FormField
+        label="ミドルネーム"
+        type="text"
+        value={shippingMiddleName}
+        onChange={(event) => onShippingMiddleNameChange(event.target.value)}
+        placeholder="James"
+      />
+      <FormField
+        label="セイ"
+        type="text"
+        value={shippingLastNameKana}
+        onChange={(event) => onShippingLastNameKanaChange(event.target.value)}
+        placeholder="ヤマダ"
+      />
+      <FormField
+        label="メイ"
+        type="text"
+        value={shippingFirstNameKana}
+        onChange={(event) => onShippingFirstNameKanaChange(event.target.value)}
+        placeholder="タロウ"
+      />
+      <FormField
+        label="ミドルネーム(カナ)"
+        type="text"
+        value={shippingMiddleNameKana}
+        onChange={(event) => onShippingMiddleNameKanaChange(event.target.value)}
+        placeholder="ジェームズ"
       />
       <FormField
         label="郵便番号"
