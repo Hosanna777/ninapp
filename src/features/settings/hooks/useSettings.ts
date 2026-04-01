@@ -6,9 +6,11 @@ function useSettings() {
   const [cardHolderName, setCardHolderName] = useState('Ryo Demo');
   const [shippingName, setShippingName] = useState('Ryo Demo');
   const [shippingPostalCode, setShippingPostalCode] = useState('150-0001');
-  const [shippingAddress, setShippingAddress] = useState(
-    '東京都渋谷区神宮前 1-2-3 NIN Residence 502',
-  );
+  const [shippingPrefecture, setShippingPrefecture] = useState('東京都');
+  const [shippingCity, setShippingCity] = useState('渋谷区神宮前');
+  const [shippingStreetAddress, setShippingStreetAddress] = useState('1-2-3');
+  const [shippingBuilding, setShippingBuilding] = useState('NIN Residence 502');
+  const [shippingPhoneNumber, setShippingPhoneNumber] = useState('090-1234-5678');
   const [securityEmail, setSecurityEmail] = useState('ryo@example.com');
   const [securityPassword, setSecurityPassword] = useState('demo1234');
   const [settingsMessage, setSettingsMessage] = useState('');
@@ -19,9 +21,13 @@ function useSettings() {
     securityEmail,
     securityPassword,
     settingsMessage,
-    shippingAddress,
+    shippingBuilding,
+    shippingCity,
     shippingName,
     shippingPostalCode,
+    shippingPrefecture,
+    shippingStreetAddress,
+    shippingPhoneNumber,
     handleSettingsSave: (event: FormEvent<HTMLFormElement>) => {
       event.preventDefault();
       setSettingsMessage(
@@ -32,9 +38,13 @@ function useSettings() {
     setPaymentMethod,
     setSecurityEmail,
     setSecurityPassword,
-    setShippingAddress,
+    setShippingBuilding,
+    setShippingCity,
     setShippingName,
     setShippingPostalCode,
+    setShippingPrefecture,
+    setShippingStreetAddress,
+    setShippingPhoneNumber,
   };
 }
 

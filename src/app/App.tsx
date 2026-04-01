@@ -58,17 +58,25 @@ function App() {
     securityEmail,
     securityPassword,
     settingsMessage,
-    shippingAddress,
+    shippingBuilding,
+    shippingCity,
     shippingName,
     shippingPostalCode,
+    shippingPrefecture,
+    shippingStreetAddress,
+    shippingPhoneNumber,
     handleSettingsSave,
     setCardHolderName,
     setPaymentMethod,
     setSecurityEmail,
     setSecurityPassword,
-    setShippingAddress,
+    setShippingBuilding,
+    setShippingCity,
     setShippingName,
     setShippingPostalCode,
+    setShippingPrefecture,
+    setShippingStreetAddress,
+    setShippingPhoneNumber,
   } = useSettings();
   const {
     carouselIndex,
@@ -199,18 +207,26 @@ function App() {
         securityEmail={securityEmail}
         securityPassword={securityPassword}
         settingsMessage={settingsMessage}
-        shippingAddress={shippingAddress}
+        shippingBuilding={shippingBuilding}
+        shippingCity={shippingCity}
         shippingName={shippingName}
         shippingPostalCode={shippingPostalCode}
+        shippingPrefecture={shippingPrefecture}
+        shippingStreetAddress={shippingStreetAddress}
+        shippingPhoneNumber={shippingPhoneNumber}
         onCardHolderNameChange={setCardHolderName}
         onGoHome={goToHome}
         onPaymentMethodChange={setPaymentMethod}
         onSave={handleSettingsSave}
         onSecurityEmailChange={setSecurityEmail}
         onSecurityPasswordChange={setSecurityPassword}
-        onShippingAddressChange={setShippingAddress}
+        onShippingBuildingChange={setShippingBuilding}
+        onShippingCityChange={setShippingCity}
         onShippingNameChange={setShippingName}
         onShippingPostalCodeChange={setShippingPostalCode}
+        onShippingPrefectureChange={setShippingPrefecture}
+        onShippingStreetAddressChange={setShippingStreetAddress}
+        onShippingPhoneNumberChange={setShippingPhoneNumber}
       />
     ),
   };

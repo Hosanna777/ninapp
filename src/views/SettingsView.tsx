@@ -10,18 +10,26 @@ type SettingsViewProps = {
   securityEmail: string;
   securityPassword: string;
   settingsMessage: string;
-  shippingAddress: string;
+  shippingBuilding: string;
+  shippingCity: string;
   shippingName: string;
   shippingPostalCode: string;
+  shippingPrefecture: string;
+  shippingStreetAddress: string;
+  shippingPhoneNumber: string;
   onCardHolderNameChange: (value: string) => void;
   onGoHome: () => void;
   onPaymentMethodChange: (value: string) => void;
   onSave: (event: FormEvent<HTMLFormElement>) => void;
   onSecurityEmailChange: (value: string) => void;
   onSecurityPasswordChange: (value: string) => void;
-  onShippingAddressChange: (value: string) => void;
+  onShippingBuildingChange: (value: string) => void;
+  onShippingCityChange: (value: string) => void;
   onShippingNameChange: (value: string) => void;
   onShippingPostalCodeChange: (value: string) => void;
+  onShippingPrefectureChange: (value: string) => void;
+  onShippingStreetAddressChange: (value: string) => void;
+  onShippingPhoneNumberChange: (value: string) => void;
 };
 
 function SettingsView({
@@ -30,18 +38,26 @@ function SettingsView({
   securityEmail,
   securityPassword,
   settingsMessage,
-  shippingAddress,
+  shippingBuilding,
+  shippingCity,
   shippingName,
   shippingPostalCode,
+  shippingPrefecture,
+  shippingStreetAddress,
+  shippingPhoneNumber,
   onCardHolderNameChange,
   onGoHome,
   onPaymentMethodChange,
   onSave,
   onSecurityEmailChange,
   onSecurityPasswordChange,
-  onShippingAddressChange,
+  onShippingBuildingChange,
+  onShippingCityChange,
   onShippingNameChange,
   onShippingPostalCodeChange,
+  onShippingPrefectureChange,
+  onShippingStreetAddressChange,
+  onShippingPhoneNumberChange,
 }: SettingsViewProps) {
   return (
     <section className="settings-section">
@@ -54,12 +70,20 @@ function SettingsView({
           onPaymentMethodChange={onPaymentMethodChange}
         />
         <ShippingSettingsCard
-          shippingAddress={shippingAddress}
+          shippingBuilding={shippingBuilding}
+          shippingCity={shippingCity}
           shippingName={shippingName}
           shippingPostalCode={shippingPostalCode}
-          onShippingAddressChange={onShippingAddressChange}
+          shippingPrefecture={shippingPrefecture}
+          shippingStreetAddress={shippingStreetAddress}
+          shippingPhoneNumber={shippingPhoneNumber}
+          onShippingBuildingChange={onShippingBuildingChange}
+          onShippingCityChange={onShippingCityChange}
           onShippingNameChange={onShippingNameChange}
           onShippingPostalCodeChange={onShippingPostalCodeChange}
+          onShippingPrefectureChange={onShippingPrefectureChange}
+          onShippingStreetAddressChange={onShippingStreetAddressChange}
+          onShippingPhoneNumberChange={onShippingPhoneNumberChange}
         />
         <SecuritySettingsCard
           securityEmail={securityEmail}
