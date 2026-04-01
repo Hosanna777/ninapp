@@ -31,10 +31,10 @@ function SiteHeader({
     <header className="hero">
       <nav className="topbar">
         <button className="brand brand-button" type="button" onClick={onGoHome}>
-          <img className="brand-logo" src="/logo-ninapp.svg" alt="NINAPP" />
+          <img className="brand-logo" src="/logo-ninapp-option-3.svg" alt="NINApp" />
           <div>
-            <p>NINAPP</p>
-            <span>Modern commerce experience</span>
+            <p>NINApp</p>
+            <span>Soft fashion and living goods</span>
           </div>
         </button>
         <div className="nav-links">

@@ -6,7 +6,9 @@ function CategoryStrip() {
       {categories.map((category) => (
         <article className="category-card" key={category.name}>
           <p>{category.name}</p>
-          <span>{category.count}</span>
+          <strong>{category.count}</strong>
+          <span>curated for everyday styling</span>
+          <small>{category.description}</small>
         </article>
       ))}
     </section>

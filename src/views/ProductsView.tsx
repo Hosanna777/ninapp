@@ -22,10 +22,13 @@ function ProductsView({
       <div className="product-list-shell">
         <div className="product-list-header">
           <div>
-            <span className="eyebrow">Product List</span>
+            <span className="eyebrow">Wardrobe and Goods</span>
             <h3>全商品</h3>
           </div>
-          <p>商品画像、商品名、短い説明、価格を視線順に整理した一覧画面です。</p>
+          <p>
+            肩肘張らない通勤服、週末のベーシック、部屋にやわらかさを足す雑貨までを、
+            同じトーンで見比べられる一覧です。
+          </p>
         </div>
         <div className="product-grid">
           {isProductsLoading ? (

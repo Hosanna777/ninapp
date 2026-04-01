@@ -16,18 +16,24 @@ function HeroSection({
   return (
     <div className="hero-grid">
       <section className="hero-copy">
-        <span className="eyebrow">Spring 2026 Collection</span>
-        <h1>日常をアップデートする、静かな主役のためのECサイト。</h1>
+        <span className="eyebrow">Soft Utility Edit</span>
+        <h1>オフホワイトに、少しの緑。服と雑貨で整える、肩肘張らない毎日。</h1>
         <p>
-          派手さではなく、質感と使い心地で選ばれるアイテムを集めたライフスタイルストア。
-          モダンなビジュアルと明快な購入導線をひとつの体験にまとめました。
+          おしゃれを楽しみたい20代から30代の女性を中心に、通勤でも休日でも浮かない服と、
+          無機質になりすぎない部屋をつくる雑貨を集めたECサイトです。やわらかな配色と落ち着いた余白で、
+          メンズにも自然に馴染むニュートラルな雰囲気にまとめています。
         </p>
+        <div className="hero-mood-row">
+          <span>Off-white base</span>
+          <span>Pastel accents</span>
+          <span>Green for calm rooms</span>
+        </div>
         <div className="hero-actions">
           <button className="primary-button" type="button" onClick={onGoProducts}>
-            商品一覧を見る
+            服と雑貨を見る
           </button>
           <button className="ghost-button" type="button">
-            Lookbook
+            Styling Notes
           </button>
         </div>
         <div className="stats-row">
@@ -42,9 +48,17 @@ function HeroSection({
 
       <aside className="hero-panel">
         <div className="panel-card main-card">
-          <span>Featured Drop</span>
-          <h2>Form follows feeling.</h2>
-          <p>厳選した3つの新作を、今週限定のキュレーションで紹介。</p>
+          <span>For Calm Weekdays</span>
+          <h2>きちんと見えるのに、力みすぎない。</h2>
+          <p>
+            柔らかなオフホワイト、ペールグリーン、淡いピンクやブルーを軸に、
+            ワードローブと部屋の景色を同じ温度で整えるセレクション。
+          </p>
+          <ul className="hero-feature-list">
+            <li>カジュアル通勤に合う軽やかな服</li>
+            <li>空間に緑を足す小さな雑貨</li>
+            <li>レディース中心でも共有しやすい色設計</li>
+          </ul>
         </div>
         <div className="panel-card floating-card">
           <span>Cart Preview</span>

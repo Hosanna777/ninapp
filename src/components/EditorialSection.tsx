@@ -3,19 +3,19 @@ import SectionHeading from './SectionHeading';
 function EditorialSection() {
   return (
     <section className="editorial-band">
-      <SectionHeading label="Editorial Focus" title="商品だけで終わらない体験設計" />
+      <SectionHeading label="Editorial Focus" title="服と部屋を同じ感覚で選べる構成" />
       <div className="editorial-grid">
         <article>
-          <strong>Immersive layout</strong>
-          <p>大きなタイポグラフィと余白を基調に、ブランド感のあるトップビューを構成。</p>
+          <strong>Soft office wardrobe</strong>
+          <p>カジュアル寄りの仕事服を軸に、休日にもそのままつながる軽やかなアイテムを提案。</p>
         </article>
         <article>
-          <strong>Clear conversion path</strong>
-          <p>カテゴリ、特集、商品カード、カート要約までを視線移動に合わせて配置。</p>
+          <strong>Objects with greenery</strong>
+          <p>布もの、ベース、ポット、小さな収納など、無機質さをやわらげる雑貨を同じ導線に配置。</p>
         </article>
         <article>
-          <strong>Responsive by default</strong>
-          <p>デスクトップとモバイル双方で崩れないレイアウトに調整し、操作密度も最適化。</p>
+          <strong>Inclusive neutral palette</strong>
+          <p>フェミニンに寄りすぎず、メンズにも馴染みやすい色域と素材感で全体をまとめています。</p>
         </article>
       </div>
     </section>

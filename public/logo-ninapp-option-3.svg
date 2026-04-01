@@ -1,0 +1,22 @@
+<svg width="420" height="120" viewBox="0 0 420 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="16" y="20" width="388" height="80" rx="20" stroke="#111111" stroke-width="4"/>
+  <text
+    x="210"
+    y="72"
+    text-anchor="middle"
+    fill="#111111"
+    font-family="'Gill Sans', 'Trebuchet MS', Arial, sans-serif"
+    font-size="50"
+    font-weight="700"
+    letter-spacing="0.8"
+  >
+    NINApp
+  </text>
+  <path d="M116 86H304" stroke="url(#line)" stroke-width="6" stroke-linecap="round"/>
+  <defs>
+    <linearGradient id="line" x1="116" y1="89" x2="304" y2="89" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FF7E5C"/>
+      <stop offset="1" stop-color="#3A74FF"/>
+    </linearGradient>
+  </defs>
+</svg>

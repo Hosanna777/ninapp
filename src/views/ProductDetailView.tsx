@@ -27,8 +27,8 @@ function ProductDetailView({
               <h2>{product.name}</h2>
               <p className="product-detail-description">{product.description}</p>
               <p className="product-detail-lead">
-                素材感と使い心地の両方に配慮した、NINAPP の人気プロダクトです。
-                視界に馴染むミニマルな造形と、日常で繰り返し使いたくなる実用性を両立しています。
+                服にも部屋にもなじむ、やわらかな色と実用性を両立した NINApp の定番アイテムです。
+                オフホワイトを基調にした暮らしへ自然に溶け込み、毎日の所作を少しだけ軽く見せます。
               </p>
               <strong className="product-detail-price">{product.price}</strong>
               <div className="product-detail-actions">

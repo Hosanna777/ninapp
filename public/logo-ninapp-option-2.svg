@@ -1,0 +1,22 @@
+<svg width="420" height="120" viewBox="0 0 420 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="18" y="18" width="384" height="84" rx="42" fill="url(#bg)"/>
+  <text
+    x="210"
+    y="75"
+    text-anchor="middle"
+    fill="#111111"
+    font-family="'Futura', 'Avenir Next', Arial, sans-serif"
+    font-size="50"
+    font-weight="700"
+    letter-spacing="0.6"
+  >
+    NINApp
+  </text>
+  <defs>
+    <linearGradient id="bg" x1="34" y1="28" x2="386" y2="92" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFCE9A"/>
+      <stop offset="0.52" stop-color="#FFF5EA"/>
+      <stop offset="1" stop-color="#A9C6FF"/>
+    </linearGradient>
+  </defs>
+</svg>
